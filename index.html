@@ -2,13 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, height=device-height, target-densitydpi=device-dpi, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script> 
+    <link rel="stylesheet" href="style.css">
     <!-- <link href="./output.css" rel="stylesheet">-->
     <title>Tap Count</title>
   </head>
   <body>
-    <div class="container mx-auto outline-2">
+    <div class="container mx-auto outline-2 h-screen">
       <div class="flex flex-row justify-between p-5">
         <button onclick="resetNumber()" class="font-sans font-bold text-xl uppercase px-7 py-4 outline-2">reset</button>
         <button onclick="test()" class="px-7 py-4 outline-2">
@@ -29,14 +30,14 @@
         </button>
         </svg>
       </div>
-      <div class="flex flex-col gap-6 justify-center items-center h-screen">
+      <div class="flex flex-col gap-20 justify-center items-center mt-30 outline-2">
         <h3 class="font-sans font-bold text-5xl capitalize text-black">
           tap count
         </h3>
         <h1 class="font-sans font-bold text-9xl text-black" id="number">0</h1>
         <button
           onclick="changeNumber()"
-          class="font-sans font-bold text-xl text-black border-2 uppercase w-full h"
+          class="font-sans font-bold text-4xl text-black border-2 uppercase w-2/3 py-5"
         >
           tap
         </button>
