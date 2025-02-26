@@ -3,16 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script> 
+    <!-- <link href="./output.css" rel="stylesheet">-->
+    <title>Tap Count</title>
   </head>
   <body>
-    <div class="container mx-auto">
-      <div>
-        <h1 class="font-sans font-bold text-4xl capitalize text-sky-700">
+    <div class="container mx-auto outline-2">
+      <div class="flex flex-row justify-between p-5">
+        <button onclick="resetNumber()" class="font-sans font-bold text-xl uppercase px-7 py-4 outline-2">reset</button>
+        <button onclick="test()" class="px-7 py-4 outline-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 512 512"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+            d="M96 256h320M96 176h320M96 336h320"
+          />
+        </button>
+        </svg>
+      </div>
+      <div class="flex flex-col gap-6 justify-center items-center h-screen">
+        <h3 class="font-sans font-bold text-5xl capitalize text-black">
           tap count
-        </h1>
+        </h3>
+        <h1 class="font-sans font-bold text-9xl text-black" id="number">0</h1>
+        <button
+          onclick="changeNumber()"
+          class="font-sans font-bold text-xl text-black border-2 uppercase w-full h"
+        >
+          tap
+        </button>
       </div>
     </div>
+    <script src="./main.js"></script>
   </body>
 </html>
+
