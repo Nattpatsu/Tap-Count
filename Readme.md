@@ -8,7 +8,10 @@ When I workout, I have to keep track of my sets, usually around 5 or 6. Sometime
 
 ## To-do list
 
-- [ ] Time count down
+- [ ] Time count down for rest on Set
 - [ ] Function Optional and Setting
 - [ ] Add Alarm when Timeout
 - [ ] Button volume up and down
+- [x] Add Anti Zoom on device Mobile
+- [ ] Function Stop Watch
+- [ ] Change Alarm Music
