@@ -2,39 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, height=device-height, target-densitydpi=device-dpi, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script> 
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZyBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIgY29sb3I9ImN1cnJlbnRDb2xvciI+PHBhdGggZD0iTTcuNTA5IDE0LjM1M1Y2LjA5NmMwLS44MjEuNjEtMS41OSAxLjQzMi0xLjU5Yy44MjQgMCAxLjU3Ny42NTMgMS41NzcgMS40NzR2NC4yODFtMCAwbC0uMDA4IDEuMTc2bS4wMDgtMS4xNzZjLjU2My0yLjExNyAzLjE1My0xLjMwNSAyLjk5NC4zNTZjLS4wMDMuMDMgMCAuNzM4IDAgLjczOG0wIDB2MS4xNG0wLTEuMTRjLjI4My0xLjkxIDMuNDIyLTEuOTYzIDMuMDIyLjk1bTAgMGwtLjAyMy42ODhtLjAyMy0uNjg4Yy40Ny0yLjAxIDMuMDM1LTEuNTc3IDIuOTY3LjI3NnYzLjY4N2MtLjAwMyAxLjU3Ni0uMzEgMi4zMy0xLjEyNSAzLjI3OWMtLjE2LjE4Ni0uMzE1LjM3OS0uNDMyLjU5NWMtLjQyOC43OTMtLjIzMiAxLjAxLS4zMDMgMS44NU03LjUxIDEwLjQxNGMtMS4zMiAxLjE5NC0yLjIwOCAyLjI4NC0yLjQ3NCAyLjYxYy0uODkgMS4zNTEtLjY2NCAyLjIzNy42IDQuMDRjLjk0MiAxLjM0IDEuODA3IDIuMzA0IDEuODczIDIuMzhjLjY3My43Ni42MTMgMS4yNjMuNjEzIDIuNTU4Ii8+PHBhdGggZD0iTTEzLjAzNCA2YzAtMi4yMS0xLjc5NS00LTQuMDEtNGE0LjAwNSA0LjAwNSAwIDAgMC00LjAwOSA0Ii8+PC9nPjwvc3ZnPg==">
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, target-densitydpi=device-dpi, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZyBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSIgY29sb3I9ImN1cnJlbnRDb2xvciI+PHBhdGggZD0iTTcuNTA5IDE0LjM1M1Y2LjA5NmMwLS44MjEuNjEtMS41OSAxLjQzMi0xLjU5Yy44MjQgMCAxLjU3Ny42NTMgMS41NzcgMS40NzR2NC4yODFtMCAwbC0uMDA4IDEuMTc2bS4wMDgtMS4xNzZjLjU2My0yLjExNyAzLjE1My0xLjMwNSAyLjk5NC4zNTZjLS4wMDMuMDMgMCAuNzM4IDAgLjczOG0wIDB2MS4xNG0wLTEuMTRjLjI4My0xLjkxIDMuNDIyLTEuOTYzIDMuMDIyLjk1bTAgMGwtLjAyMy42ODhtLjAyMy0uNjg4Yy40Ny0yLjAxIDMuMDM1LTEuNTc3IDIuOTY3LjI3NnYzLjY4N2MtLjAwMyAxLjU3Ni0uMzEgMi4zMy0xLjEyNSAzLjI3OWMtLjE2LjE4Ni0uMzE1LjM3OS0uNDMyLjU5NWMtLjQyOC43OTMtLjIzMiAxLjAxLS4zMDMgMS44NU03LjUxIDEwLjQxNGMtMS4zMiAxLjE5NC0yLjIwOCAyLjI4NC0yLjQ3NCAyLjYxYy0uODkgMS4zNTEtLjY2NCAyLjIzNy42IDQuMDRjLjk0MiAxLjM0IDEuODA3IDIuMzA0IDEuODczIDIuMzhjLjY3My43Ni42MTMgMS4yNjMuNjEzIDIuNTU4Ii8+PHBhdGggZD0iTTEzLjAzNCA2YzAtMi4yMS0xLjc5NS00LTQuMDEtNGE0LjAwNSA0LjAwNSAwIDAgMC00LjAwOSA0Ii8+PC9nPjwvc3ZnPg=="
+    />
     <!-- <link href="./output.css" rel="stylesheet">-->
     <title>Tap Count</title>
   </head>
   <body>
     <div class="container min-h-screen mx-auto flex flex-col justify-between">
       <div class="flex flex-row justify-between items-center p-2">
-        <button onclick="resetNumber()" class="font-sans font-bold text-xl uppercase px-7 py-4">reset</button>
-        <button onclick="test()" class="px-7 py-4">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="40"
-          height="40"
-          viewBox="0 0 512 512"
+        <button
+          onclick="resetNumber()"
+          class="font-sans font-bold text-xl uppercase px-7 py-4"
         >
-          <path
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="32"
-            d="M96 256h320M96 176h320M96 336h320"
-          />
+          reset
         </button>
-        </svg>
+        <h3 class="font-sans text-4xl font-bold capitalize">tap count</h3>
+        <button onclick="test()" class="px-7 py-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+              d="M96 256h320M96 176h320M96 336h320"
+            />
+          </svg>
+        </button>
       </div>
       <div class="flex flex-col gap-20 justify-center items-center">
-        <h3 class="font-sans font-bold text-5xl capitalize text-black">
+        <!--<h3 class="font-sans font-bold text-5xl capitalize text-black">
           tap count
-        </h3>
+        </h3>-->
+        <span class="font-sans font-bold text-3xl" id="time">000s</span>
         <h1 class="font-sans font-bold text-9xl text-black" id="number">0</h1>
         <button
           onclick="changeNumber()"
@@ -44,10 +57,14 @@
         </button>
       </div>
       <footer class="flex flex-col justify-end items-center m-5">
-        <a href="https://github.com/nattpatsu" target="_blank" class="font-sans text-base">Design by Nattpatsu</a>
+        <a
+          href="https://github.com/nattpatsu"
+          target="_blank"
+          class="font-sans text-base"
+          >Design by Nattpatsu</a
+        >
       </footer>
     </div>
     <script src="./main.js"></script>
   </body>
 </html>
-
