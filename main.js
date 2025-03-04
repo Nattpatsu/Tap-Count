@@ -18,8 +18,12 @@ const changeNumber = () => {
 };
 
 const resetNumber = () => {
-  count = 0;
-  countNumber.innerHTML = count;
+  //Reset count number
+  countNumber.innerHTML = 0;
+
+  //Reset Time
+  stopTime();
+  changeTime.innerHTML = 30;
 };
 
 //Timer set up
@@ -27,7 +31,7 @@ const resetNumber = () => {
 const setTime = () => {
   //const minutes = Math.floor(second / 60);
   const seconds = second % 60;
-  changeTime.innerHTML = `${seconds} s`;
+  changeTime.innerHTML = `${seconds}`;
   console.log("settime");
   seconds === 0 ? stopTime() : console.log(seconds);
 };
