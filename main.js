@@ -1,5 +1,6 @@
 const countNumber = document.getElementById("number");
 const changeTime = document.getElementById("time");
+const buttonTap = document.getElementById("tap");
 
 let count = 0;
 let second = 30;
@@ -43,11 +44,16 @@ const timer = () => {
 };
 
 const startTime = () => {
+  //change color text
+  buttonTap.classList.replace("text-black", "text-gray-500");
   //clearInterval(interval);
   interval = setInterval(timer, 1000);
+  buttonTap.disabled = true;
 };
 
 const stopTime = () => {
   clearInterval(interval);
   second = 30;
+  buttonTap.disabled = false;
+  buttonTap.classList.replace("text-gray-500", "text-black");
 };
