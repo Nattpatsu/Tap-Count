@@ -2,6 +2,11 @@ const countNumber = document.getElementById("number");
 const changeTime = document.getElementById("time");
 const buttonTap = document.getElementById("tap");
 
+//navbar
+const buttonToggle = document.getElementById("toggle");
+const menuList = document.getElementById("menu");
+
+//count variable
 let count = 0;
 let second = 30;
 let interval = null;
@@ -33,7 +38,7 @@ const setTime = () => {
   //const minutes = Math.floor(second / 60);
   const seconds = second % 60;
   changeTime.innerHTML = `${seconds}`;
-  console.log("settime");
+  //console.log("settime");
   seconds === 0 ? stopTime() : console.log(seconds);
 };
 
@@ -45,7 +50,7 @@ const timer = () => {
 
 const startTime = () => {
   //change color text
-  buttonTap.classList.replace("text-black", "text-gray-500");
+  buttonTap.classList.replace("text-black", "text-gray-400");
   //clearInterval(interval);
   interval = setInterval(timer, 1000);
   buttonTap.disabled = true;
@@ -54,6 +59,14 @@ const startTime = () => {
 const stopTime = () => {
   clearInterval(interval);
   second = 30;
+  //console.log(second);
   buttonTap.disabled = false;
-  buttonTap.classList.replace("text-gray-500", "text-black");
+  buttonTap.classList.replace("text-gray-400", "text-black");
 };
+
+//navbar action
+
+buttonToggle.addEventListener("click", () => {
+  //alert("test fn event listener");
+  menuList.classList.toggle("hidden");
+});
