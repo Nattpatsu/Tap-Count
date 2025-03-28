@@ -3,8 +3,11 @@ const changeTime = document.getElementById("time");
 const buttonTap = document.getElementById("tap");
 
 //navbar
-const buttonToggle = document.getElementById("toggle");
+const buttonToggle = document.getElementById("togglenav");
 const menuList = document.getElementById("menu");
+const openSetting = document.getElementById("openSetting");
+const closeSetting = document.getElementById("closeSetting");
+const menuSetting = document.getElementById("menuSetting");
 
 //count variable
 let count = 0;
@@ -68,5 +71,13 @@ const stopTime = () => {
 
 buttonToggle.addEventListener("click", () => {
   //alert("test fn event listener");
+  menuList.classList.toggle("hidden");
+});
+
+openSetting.addEventListener("click", () => {
+  menuSetting.classList.toggle("hidden");
+});
+closeSetting.addEventListener("click", () => {
+  menuSetting.classList.toggle("hidden");
   menuList.classList.toggle("hidden");
 });
