@@ -8,6 +8,7 @@ const menuList = document.getElementById("menu");
 const openSetting = document.getElementById("openSetting");
 const closeSetting = document.getElementById("closeSetting");
 const menuSetting = document.getElementById("menuSetting");
+const saveSetting = document.getElementById("saveSetting");
 
 //count variable
 let count = 0;
@@ -18,6 +19,8 @@ const test = () => {
   alert("Waiting for upgrade");
 };
 
+//changeNumber active when press "TAP"
+
 const changeNumber = () => {
   count++;
   countNumber.innerHTML = count;
@@ -26,13 +29,14 @@ const changeNumber = () => {
   //console.log(count);
 };
 
+//resetNumber active when press "RESET"
+
 const resetNumber = () => {
   //Reset count number
   countNumber.innerHTML = 0;
-
   //Reset Time
   stopTime();
-  changeTime.innerHTML = 30;
+  changeTime.innerHTML = second;
 };
 
 //Timer set up
@@ -80,4 +84,9 @@ openSetting.addEventListener("click", () => {
 closeSetting.addEventListener("click", () => {
   menuSetting.classList.toggle("hidden");
   menuList.classList.toggle("hidden");
+});
+saveSetting.addEventListener("click", () => {
+  let timeCountset = document.getElementById("timecoutset").value;
+  //alert(timeCountset);
+  second = timeCountset;
 });

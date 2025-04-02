@@ -25,7 +25,7 @@
           reset
         </button>
         <h3 class="font-sans text-4xl font-bold capitalize">tap count</h3>
-        <nav class="flex flex-col outline-2">
+        <nav class="flex flex-col">
           <div id="togglenav">
             <button onclick="" class="">
               <svg
@@ -46,10 +46,7 @@
             </button>
           </div>
           <!--Menu-->
-          <div
-            class="flex flex-row gap-4 items-center outline-2 pr-4 hidden"
-            id="menu"
-          >
+          <div class="flex flex-row gap-4 items-center pr-4 hidden" id="menu">
             <ul
               class="flex flex-col font-sans gap-4 capitalize text-base items-start"
             >
@@ -110,7 +107,7 @@
         <!--popup setting-->
         <div
           id="menuSetting"
-          class="fixed inset-0 flex items-center justify-center bg-opacity-50"
+          class="fixed inset-0 flex items-center justify-center bg-opacity-50 hidden"
         >
           <div
             class="flex flex-col gap-4 bg-white p-6 rounded-lg shadow-lg w-96"
@@ -123,8 +120,9 @@
                 >time countdown:</label
               >
               <input
+                id="timecoutset"
                 type="number"
-                class="rounded-sm"
+                class="rounded-sm border-2 border-gray-400"
                 placeholder="Unit Seconds"
                 min="0"
               />
@@ -138,7 +136,10 @@
               >
                 Close
               </button>
-              <button class="px-4 py-2 bg-black text-white rounded">
+              <button
+                id="saveSetting"
+                class="px-4 py-2 bg-black text-white rounded"
+              >
                 Save
               </button>
             </div>
