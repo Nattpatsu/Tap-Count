@@ -12,7 +12,7 @@ const saveSetting = document.getElementById("saveSetting");
 
 //count variable
 let count = 0;
-let second = 30;
+let second = document.getElementById("timecoutset").value;
 let interval = null;
 
 const test = () => {
@@ -26,6 +26,8 @@ const changeNumber = () => {
   countNumber.innerHTML = count;
   timer();
   startTime();
+  changeTime.classList.replace("text-red-400", "text-black");
+  changeTime.classList.remove("blink-text");
   //console.log(count);
 };
 
@@ -34,8 +36,11 @@ const changeNumber = () => {
 const resetNumber = () => {
   //Reset count number
   countNumber.innerHTML = 0;
+  count = 0;
   //Reset Time
-  changeTime.innerHTML = second;
+  changeTime.innerHTML = document.getElementById("timecoutset").value;
+  changeTime.classList.replace("text-red-400", "text-black");
+  changeTime.classList.remove("blink-text");
   stopTime();
 };
 
@@ -46,12 +51,21 @@ const setTime = () => {
   const seconds = second % 60;
   changeTime.innerHTML = `${seconds}`;
   //console.log("settime");
-  seconds === 0 ? stopTime() : console.log(seconds);
+  if (seconds === 0) {
+    stopTime();
+    //blinking(changeTime);
+    changeTime.classList.replace("text-black", "text-red-400");
+    changeTime.classList.add("blink-text");
+    //let timeCountset = document.getElementById("timecoutset").value;
+    //second = timeCountset;
+  } else {
+    console.log(seconds);
+  }
 };
 
 const timer = () => {
-  let seconds = second;
-  seconds--;
+  second--;
+  //seconds--;
   setTime();
   //console.log("timer");
 };
@@ -66,9 +80,9 @@ const startTime = () => {
 
 const stopTime = () => {
   clearInterval(interval);
-  //second = 30;
-  //console.log(second);
-  buttonTap.disabled = false;
+  second =
+    //console.log(second);
+    buttonTap.disabled = false;
   buttonTap.classList.replace("text-gray-400", "text-black");
 };
 
