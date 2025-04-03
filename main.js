@@ -35,8 +35,8 @@ const resetNumber = () => {
   //Reset count number
   countNumber.innerHTML = 0;
   //Reset Time
-  stopTime();
   changeTime.innerHTML = second;
+  stopTime();
 };
 
 //Timer set up
@@ -50,7 +50,8 @@ const setTime = () => {
 };
 
 const timer = () => {
-  second--;
+  let seconds = second;
+  seconds--;
   setTime();
   //console.log("timer");
 };
@@ -65,7 +66,7 @@ const startTime = () => {
 
 const stopTime = () => {
   clearInterval(interval);
-  second = 30;
+  //second = 30;
   //console.log(second);
   buttonTap.disabled = false;
   buttonTap.classList.replace("text-gray-400", "text-black");
@@ -87,6 +88,10 @@ closeSetting.addEventListener("click", () => {
 });
 saveSetting.addEventListener("click", () => {
   let timeCountset = document.getElementById("timecoutset").value;
-  //alert(timeCountset);
+  //console.log(second, timeCountset);
   second = timeCountset;
+  changeTime.innerHTML = second;
+  //console.log(second, timeCountset);
+  menuSetting.classList.toggle("hidden");
+  menuList.classList.toggle("hidden");
 });
