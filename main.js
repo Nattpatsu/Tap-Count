@@ -42,6 +42,7 @@ const resetNumber = () => {
   changeTime.classList.replace("text-red-400", "text-black");
   changeTime.classList.remove("blink-text");
   stopTime();
+  console.log(second);
 };
 
 //Timer set up
@@ -80,9 +81,9 @@ const startTime = () => {
 
 const stopTime = () => {
   clearInterval(interval);
-  second =
-    //console.log(second);
-    buttonTap.disabled = false;
+  second = document.getElementById("timecoutset").value;
+  //console.log(second);
+  buttonTap.disabled = false;
   buttonTap.classList.replace("text-gray-400", "text-black");
 };
 
